@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FontGenerator.iml" filepath="$PROJECT_DIR$/.idea/modules/FontGenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FontGenerator_main.iml" filepath="$PROJECT_DIR$/.idea/modules/FontGenerator_main.iml" group="FontGenerator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FontGenerator_test.iml" filepath="$PROJECT_DIR$/.idea/modules/FontGenerator_test.iml" group="FontGenerator" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,3 @@
+rootProject.name = 'FontGenerator'
+include 'doubletype'
+
