@@ -53,7 +53,8 @@ public class FGlyph {
     }
 
     public void addContour(FPoint[] points) {
-        contours.add(new FContour(points));
+        FContour contour = new FContour(points);
+        contours.add(contour);
     }
 
     public void addContour(FPoint[] points, FPoint[] controlPoints) {

@@ -7,25 +7,35 @@ import fontastic.Fontastic;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
+
+// From: https://github.com/jindrapetrik/jpexs-decompiler
 public class Generator {
     public Generator() {
 
     }
 
-    public void generate(GlyphData data) throws Exception {
-        File file = new File("./examplefont.ttf");
+    public File generate(ArrayList<GlyphData> datas, String fontName) {
+        File file = new File(String.format("./%s.ttf", fontName));
         file.delete();
-        Fontastic f = new Fontastic("ExampleFont", file);
-        f.setAuthor("Nobody");
-        FPoint[] points = new FPoint[]{ // Define a FPoint array containing the points of the shape
-                new FPoint(0, 0),
-                new FPoint(512, 0),
-                //new FPoint(256, 1024),
-                new FPoint(new FPoint(256, 1024), new FPoint(512, 512)),
-                new FPoint(0, 0)
-        };
-        f.addGlyph('가').addContour(points);             // Assign contour to character A
+        Fontastic f = null;
+        try {
+            f = new Fontastic(fontName, file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        f.setAuthor("MyLitteFont");
+        for (GlyphData data : datas) {
+            FGlyph glyph = f.addGlyph(data.letter);
+            for (FPoint[] contour : data.contours) {
+                glyph.addContour(contour);
+            }
+            glyph.setAdvanceWidth(data.width);
+        }
         f.buildFont();
+        return file;
     }
 }

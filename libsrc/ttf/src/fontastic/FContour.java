@@ -57,6 +57,25 @@ public class FContour {
         }
     }
 
+//    public double getWidth() {
+//        if (points.size() == 0) {
+//            return 0;
+//        }
+//
+//        double max = points.get(0).x;
+//        double min = points.get(0).x;
+//
+//        for (FPoint fPoint : points) {
+//            if (fPoint.hasControlPoint1()) {
+//                max = Math.max(fPoint.controlPoint.x, max);
+//                min = Math.min(fPoint.controlPoint.x, min);
+//            }
+//            max = Math.max(fPoint.x, max);
+//            min = Math.min(fPoint.x, min);
+//        }
+//        return max - min;
+//    }
+
     public List<FPoint> getPoints() {
         return points;
     }
